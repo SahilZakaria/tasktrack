@@ -1,16 +1,18 @@
+import logging
+
+from django.db import transaction
 from django.db.models import Count
 from django.utils.dateparse import parse_date
-from rest_framework import viewsets, permissions, filters
+from rest_framework import filters, permissions, viewsets
 from rest_framework.decorators import action
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
-from .models import Project, Task
-from .serializers import ProjectSerializer, TaskSerializer
-from .permissions import IsProjectOwner
-from .services import project_stats
-import logging
-from django.db import transaction
+
 from .jobs import notify_assignee
+from .models import Project, Task
+from .permissions import IsProjectOwner
+from .serializers import ProjectSerializer, TaskSerializer
+from .services import project_stats
 
 logger = logging.getLogger(__name__)
 

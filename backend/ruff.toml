@@ -1,0 +1,5 @@
+extend-exclude = ["*/migrations/*"]
+
+[lint]
+# Django/DRF use class-level lists (Meta.fields, permission_classes) by design.
+ignore = ["RUF012"]

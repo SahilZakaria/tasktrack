@@ -1,8 +1,11 @@
+from datetime import date
+
 import pytest
 from django.contrib.auth.models import User
 from rest_framework.test import APIClient
+
 from tasks.models import Project, Task
-from datetime import date
+
 
 @pytest.fixture
 def user(db):

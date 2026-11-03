@@ -1,8 +1,9 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-from tasks.views import ProjectViewSet, TaskViewSet
+
 from config.health import health
+from tasks.views import ProjectViewSet, TaskViewSet
 
 router = DefaultRouter()
 router.register("projects", ProjectViewSet, basename="project")
