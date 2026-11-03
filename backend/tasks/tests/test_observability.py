@@ -26,3 +26,6 @@ def test_request_id_generated(client):
 def test_request_id_header_validated(client, sent, echoed):
     resp = client.get("/api/health/", HTTP_X_REQUEST_ID=sent)
     assert (resp["X-Request-ID"] == sent) is echoed
+
+def test_deliberately_broken():
+    assert 1 + 1 == 3
